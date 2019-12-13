@@ -2,17 +2,29 @@
   var x = d3.scaleLinear()
   .range([0, width])
   .domain([data[2]-0.75, data[2]+0.75]);
-  //.domain([-5,5]);
-  
-  var xAxis = svg.append("g")
-  .attr("transform", "translate(0," + height + ")")
-  .attr("class", "xaxis")
-  .call(d3.axisBottom(x));
-  
-  svg.selectAll("xaxis")
-    .transition()
-    .duration(1000)
+    
+  svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .attr("class", "xaxis")
     .call(d3.axisBottom(x));
+  
+  var xg = svg.selectAll(".xaxis")
+    .call(d3.axisBottom(x));
+
+//  xg.enter()
+//    .append(".xaxis")
+//    .call(d3.axisBottom(x));
+        
+    
+ // xg.exit().remove();
+
+  xg
+    .transition().duration(100)
+    .call(d3.axisBottom(x));
+
+    
+
+
 
 // Add Y axis
   var y = d3.scaleLinear()
@@ -44,14 +56,6 @@
   var population = r2d3.svg.selectAll(".pop")
   .data(r2d3.data);
   
-  //population.enter()
-  //  .append("circle")
-  //    .attr("cx", x(data[2]))
-  //    .attr("cy", y(0))
-  //    .attr("r", 20)
-  //    .style("fill", "green")
-  //    .attr("class", "pop");
-
   population.enter()
       .append("line")
         .attr("x1", x(data[2]))

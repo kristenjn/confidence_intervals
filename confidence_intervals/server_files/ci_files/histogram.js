@@ -3,12 +3,17 @@
   .domain([-4, 4]) 
   .range([0, width]);
   
-  var xAxis = d3.axisBottom()
-  .scale(x);
-  
   svg.append("g")
   .attr("transform", "translate(0," + height + ")")
-  .call(xAxis);
+  .attr("class", "xaxis");
+  
+  svg.selectAll(".xaxis").enter()
+  .call(d3.axisBottom(x));
+  
+  svg.selectAll(".xaxis").exit().remove();
+
+  svg.selectAll(".xaxis").transition().duration(100)
+  .call(d3.axisBottom(x));
   
   // Y axis: initialization
   var y = d3.scaleLinear()
@@ -56,6 +61,26 @@ function update() {
     u
     .exit()
     .remove();
+    
+    var population = r2d3.svg.selectAll(".pop")
+      .data(r2d3.data);
+  
+    population.enter()
+      .append("line")
+        .attr("x1", x(d3.mean(data)))
+        .attr("y1", y(0))
+        .attr("x2", x(d3.mean(data)))
+        .attr("y2", -height/10)
+        .attr("stroke", "#000")
+        .attr("stroke-width", "1px")
+        .attr("class", "pop");
+  
+  population.exit().remove();
+
+  population.transition()
+  .duration(1000)
+  .attr("x1", x(d3.mean(data)))
+  .attr("x2", x(d3.mean(data)));
   }
   
   update();

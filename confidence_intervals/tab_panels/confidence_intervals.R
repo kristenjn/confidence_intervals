@@ -1,7 +1,8 @@
 ci_tab <- tabPanel(
   "ci_panel",
   fluidRow(column(width = 12,
-                  "Explore how confidence interval range varies with sample size, level of confidence, and the random sample")),
+                  "Explore how confidence interval range varies with sample size, level of confidence, and the random sample",
+                  HTML("<hr>"))),
   fluidRow(
     column(width = 6,
            box(
@@ -36,6 +37,7 @@ ci_tab <- tabPanel(
     column(width = 6,
            box(
              width = NULL,
+             solidHeader = TRUE,
              title = "Results",
              sliderInput(inputId = "confidence_interval",
                          label = "Select confidence interval",

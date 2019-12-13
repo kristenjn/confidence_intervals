@@ -10204,3 +10204,10 @@ input[type=radio][disabled] {
   background: transparent;
 }
 
+
+.box-solid .box-header {
+  background-color: #222426;
+  color: #fff;
+  border-radius: 3px;
+}
+

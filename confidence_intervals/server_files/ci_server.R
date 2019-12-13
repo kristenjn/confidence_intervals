@@ -3,13 +3,13 @@ source("server_files/ci_files/plot_ci_results.R")
 rv <- reactiveValues()
 # POPULATION DATA
 x_population <- seq(100, 150, length=10000)
-y_hist_pop <- rnorm(x)
+y_hist_pop <- rnorm(x_population)
+population_mean <- mean(y_hist_pop)
 
 observeEvent(c(input$sample_size, input$new_sample), {
   # SAMPLED DATA
   n = input$sample_size
   rv$y_hist <- sample(y_hist_pop, size = n, replace = FALSE)
-  rv$population_mean <- mean(y_hist_pop)
   rv$sample_mean <- mean(rv$y_hist)
 
 })
