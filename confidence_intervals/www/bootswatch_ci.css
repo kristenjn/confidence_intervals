@@ -2584,7 +2584,7 @@ a.shiny-download-link:not(:disabled):not(.disabled):active:focus, a.shiny-downlo
 }
 
 .btn:focus, .btn.focus {
-  outline: 0;
+  outline: none;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(26, 26, 26, 0.25);
           box-shadow: 0 0 0 0.2rem rgba(26, 26, 26, 0.25);
 }
@@ -2603,21 +2603,25 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #09101e;
-  border: 1px solid;
-  border-color: #ffd151;
-  border-radius: 10px !important;
+  color: #36393b;
+  font-weight: 800;
+  background-color: #ffd04e;
+  border: 1px solid rgba(255,255,255,0);
+  border-radius: 5px !important;
   margin-bottom: 0.6rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .btn-primary:hover {
-  color: #fff;
-  background-color: #101e37;
-  border-color: #101e37 !important;
+  color: #36393b;
+  background-color: #ffd04e;
+  border: 1px solid rgba(255,255,255,0) !important;
 }
 
 .btn-primary:focus, .btn-primary.focus {
+  color: #36393b;
+  background-color: #ffd04e;
+  border: 1px solid rgba(255,255,255,0) !important;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(26, 26, 26, 0.5);
           box-shadow: 0 0 0 0.2rem rgba(26, 26, 26, 0.5);
 }
@@ -2630,15 +2634,9 @@ fieldset:disabled a.btn {
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
-  color: #fff;
-  background-color: #101e37;
-  border-color: #101e37;
-}
-
-.btn-primary.focus, .btn-primary:focus {
-  color: #fff;
-  background-color: #09101e;
-  border-color: #ffd151;
+  color: #36393b;
+  background-color: #ffd04e;
+  border: 1px solid rgba(255,255,255,0) !important;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,

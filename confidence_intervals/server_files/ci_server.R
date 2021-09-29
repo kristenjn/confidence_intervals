@@ -11,7 +11,6 @@ observeEvent(c(input$sample_size, input$new_sample), {
   n = input$sample_size
   rv$y_hist <- sample(y_hist_pop, size = n, replace = FALSE)
   rv$sample_mean <- mean(rv$y_hist)
-
 })
 
 observeEvent(c(input$confidence_interval, rv$y_hist), {

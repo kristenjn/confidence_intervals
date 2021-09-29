@@ -21,6 +21,11 @@ ui <- dashboardPage(
   ), #end sidebar
   dashboardBody(
     tags$head(tags$link(rel = "stylesheet", type = "text/css", href = "bootswatch_ci.css")),
+    tags$script(HTML("
+     $(document).ready(function() {
+        $('.btn').on('click', function(){$(this).blur()});
+      })
+    ")),
     ci_tab
   ) #end body
 )

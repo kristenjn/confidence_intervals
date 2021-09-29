@@ -2,3 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
+
+confidence_intervals/rsconnect/
+confidence_intervals/non-app/
